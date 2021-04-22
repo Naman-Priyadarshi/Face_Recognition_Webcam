@@ -5,10 +5,12 @@ import cv2
 video_capture = cv2.VideoCapture(0)
 
 naman_image = fr.load_image_file("Naman.jpg")
+john_image = fr.load_image_file("John.jpg")
 naman_face_encoding = fr.face_encodings(naman_image)[0]
+john_face_encoding = fr.face_encodings(john_image)[0]
 
-known_face_encondings = [naman_face_encoding]
-known_face_names = ["Naman"]
+known_face_encondings = [naman_face_encoding, john_face_encoding]
+known_face_names = ["Naman", "John"]
 
 while True: 
     ret, frame = video_capture.read()
